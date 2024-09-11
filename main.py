@@ -209,7 +209,7 @@ with center_col:
         with cols[0]:
             new_spotify_link = st.text_input("  ", value=participant.get('spotify_link', ''),
                                              key=f"spotify_link_{participant['id']}",
-                                             placeholder="Spotify Artist Page Link")
+                                             placeholder="Spotify Artist Page Link 1")
             if new_spotify_link != participant.get('spotify_link', ''):
                 participant['spotify_link'] = new_spotify_link
 
@@ -217,7 +217,24 @@ with center_col:
             new_apple_music_link = st.text_input("",
                                                  value=participant.get('apple_music_link', ''),
                                                  key=f"apple_music_link_{participant['id']}",
-                                                 placeholder="Apple Music Artist Page Link")
+                                                 placeholder="Apple Music Artist Page Link 1")
+            if new_apple_music_link != participant.get('apple_music_link', ''):
+                participant['apple_music_link'] = new_apple_music_link
+        # Adding the Spotify and Apple Music links in a new row
+        cols = st.columns([2, 2])  # Two columns for the Spotify and Apple Music links
+
+        with cols[0]:
+            new_spotify_link = st.text_input("  ", value=participant.get('spotify_link2', ''),
+                                             key=f"spotify_link2_{participant['id']}",
+                                             placeholder="Spotify Artist Page Link 2")
+            if new_spotify_link != participant.get('spotify_link', ''):
+                participant['spotify_link'] = new_spotify_link
+
+        with cols[1]:
+            new_apple_music_link = st.text_input("",
+                                                 value=participant.get('apple_music_link2', ''),
+                                                 key=f"apple_music_link2_{participant['id']}",
+                                                 placeholder="Apple Music Artist Page Link 2")
             if new_apple_music_link != participant.get('apple_music_link', ''):
                 participant['apple_music_link'] = new_apple_music_link
 

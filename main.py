@@ -209,7 +209,7 @@ with center_col:
         with cols[0]:
             new_spotify_link = st.text_input("  ", value=participant.get('spotify_link', ''),
                                              key=f"spotify_link_{participant['id']}",
-                                             placeholder="Spotify Artist Pag Link")
+                                             placeholder="Spotify Artist Page Link")
             if new_spotify_link != participant.get('spotify_link', ''):
                 participant['spotify_link'] = new_spotify_link
 
